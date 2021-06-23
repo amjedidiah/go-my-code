@@ -1,0 +1,12 @@
+// Bootstrap import
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// Utils folder import
+@import './utils/base';
+
+// Layout folder imports
+@import './layout/header';
+
+// Components folder imports
+@import './components/app';
+@import './components/post';

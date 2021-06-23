@@ -1,0 +1,23 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "api": "lerna run --parallel --scope go-my-code-api dev",
+    "api:doc": "lerna run --parallel --scope go-my-code-api api:launch",
+    "client": "lerna run --parallel --scope go-my-code-client dev",
+    "list": "lerna ls -a --graph --json",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "predev": "prettier --write \"**/*.js\" && lerna run check --parallel",
+    "dev": "lerna run dev --parallel",
+    "start": "lerna run start --parallel",
+    "deploy:api": "git subtree push --prefix services/api heroku master || true",
+    "deploy:client": "lerna run --parallel --scope go-my-code-client deploy",
+    "deploy": "yarn deploy:api && yarn deploy:client"
+  },
+  "pre-commit": "predev",
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "pre-commit": "^1.2.2"
+  }
+}

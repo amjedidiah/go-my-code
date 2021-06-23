@@ -1,0 +1,10 @@
+:root {
+  --white: #fff;
+  --transparent: transparent;
+  --primary: #e60a14;
+  --gray: #d3d3d3;
+}
+
+.bg-primary--custom {
+  background: var(--primary);
+}

@@ -1,0 +1,105 @@
+{
+  "name": "go-my-code-client",
+  "version": "0.0.1",
+  "description": "GoMyCode take-home assessment",
+  "keywords": [
+    "hackernews",
+    "server",
+    "reactjs",
+    "expressjs",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": {
+    "name": "Jedidiah Amaraegbu",
+    "email": "imunacode@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amjedidiah/go-my-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amjedidiah/go-my-code/issues"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.js\" --fix || false",
+    "test": "cross-env CI=true react-scripts test --detectOpenHandles",
+    "test:watch": "react-scripts test --watch",
+    "test:cover": "react-scripts test --coverage",
+    "check": "yarn lint && yarn test",
+    "dev": "yarn run check && react-scripts start",
+    "dev:secure": "yarn run check && cross-env HTTPS=true react-scripts start",
+    "dev:tunnel": "yarn run check && netlify dev --live",
+    "build": "react-scripts build",
+    "start": "serve -s build",
+    "prod": "yarn build && yarn start",
+    "deploy:netlify-preview": "yarn build && netlify deploy --open",
+    "deploy:netlify-live": "yarn build && netlify deploy -p",
+    "deploy:gh-pages": "yarn build && gh-pages -d build",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+    "babel-eslint": "^10.1.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.29.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-react": "^7.24.0",
+    "pre-commit": "^1.2.2"
+  },
+  "main": "src/index.js",
+  "homepage": "https://go-my-code-amjedidiah.netlify.app",
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "node-sass": "^6.0.0",
+    "objectify-array": "^2.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.4",
+    "react-redux-loading": "^4.6.1",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^4.0.3",
+    "react-scroll-to-top": "^1.0.5",
+    "react-select": "^4.3.1",
+    "react-toastify": "^7.0.4",
+    "redux": "^4.1.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "serve": "^12.0.0",
+    "web-vitals": "^2.0.1",
+    "workbox-background-sync": "^6.1.5",
+    "workbox-broadcast-update": "^6.1.5",
+    "workbox-cacheable-response": "^6.1.5",
+    "workbox-core": "^6.1.5",
+    "workbox-expiration": "^6.1.5",
+    "workbox-google-analytics": "^6.1.5",
+    "workbox-navigation-preload": "^6.1.5",
+    "workbox-precaching": "^6.1.5",
+    "workbox-range-requests": "^6.1.5",
+    "workbox-routing": "^6.1.5",
+    "workbox-strategies": "^6.1.5",
+    "workbox-streams": "^6.1.5"
+  }
+}

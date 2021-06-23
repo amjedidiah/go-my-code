@@ -1,0 +1,31 @@
+#header {
+  .navbar {
+    background: var(--white);
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      width: unset;
+    }
+  }
+
+  .navbar-collapse.navbar-collapse--custom {
+    display: none !important;
+
+    @media (min-width: 992px) {
+      display: flex !important;
+    }
+  }
+
+  .nav-link {
+    color: var(--gray);
+
+    &.active {
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary);
+    }
+  }
+}

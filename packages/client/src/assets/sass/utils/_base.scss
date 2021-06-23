@@ -1,0 +1,171 @@
+/* SCSS Document */
+:root {
+  font-size: 12px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  transition: all 0.15s !important;
+  scroll-behavior: smooth !important;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  body {
+    box-sizing: border-box;
+    font-weight: 400;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  a:hover,
+  a.active {
+    text-decoration: none;
+    // text-transform: uppercase;
+    color: unset;
+    // font-weight: bold;
+  }
+}
+
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.btn.btn--no-shadow {
+  box-shadow: unset;
+}
+
+.container--video {
+  position: relative;
+}
+
+/* * Bootstrap * */
+
+.card {
+  border: none;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.input-group.input-group--custom {
+  align-items: center;
+  width: 100%;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.navbar-toggler.navbar-toggler--custom {
+  outline: none !important;
+  border: none !important;
+}
+
+/* * Custom * */
+
+.clear {
+  clear: both;
+}
+
+.form-control,
+.form-control.form-control--custom,
+.form-control.form-control--custom:-webkit-autofill,
+.form-control.form-control--custom:-webkit-autofill:hover,
+.form-control.form-control--custom:-webkit-autofill:focus,
+.form-control.form-control--custom:-webkit-autofill:active,
+.input-group,
+.input-group-append,
+.input-group-prepend {
+  box-shadow: 0 0 0 1000px #ffffff inset;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  border: none;
+  height: fit-content;
+  outline: none;
+}
+
+.img-holder {
+  overflow: hidden;
+}
+
+.input--search.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+}
+
+.input--search.show .dropdown-menu {
+  width: 100%;
+  height: calc(100vh - 40px);
+}
+
+.just-height {
+  height: fit-content;
+}
+
+.just-width {
+  width: fit-content;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+@media screen and (min-width: 576px) {
+  :root {
+    font-size: 13px;
+  }
+}

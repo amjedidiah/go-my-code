@@ -1,0 +1,55 @@
+{
+  "name": "go-my-code-api",
+  "version": "0.0.1",
+  "description": "API for GoMyCode take-home assessment",
+  "keywords": [
+    "hackernews",
+    "server",
+    "reactjs",
+    "expressjs",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": {
+    "name": "Jedidiah Amaraegbu",
+    "email": "imunacode@gmail.com"
+  },
+  "license": "MIT",
+  "main": "src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amjedidiah/go-my-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amjedidiah/go-my-code/issues"
+  },
+  "scripts": {
+    "api:build": "api-console build -t \"RAML 1.0\" api.raml",
+    "preapi:serve": "start chrome http://127.0.0.1:8000",
+    "api:serve": "api-console serve build",
+    "api:launch": "yarn run api:build && yarn run api:serve",
+    "check": "yarn lint && yarn test",
+    "dev": "nodemon --delay 500ms app.js",
+    "lint": "eslint \"**/*.js\" --fix || false",
+    "start": "node app.js",
+    "test": "jest --passWithNoTests",
+    "test:cover": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "errorhandler": "^1.5.1",
+    "eslint-plugin-import": "^2.23.4",
+    "express": "^4.17.1",
+    "express-form-data": "^2.0.17",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.7"
+  }
+}

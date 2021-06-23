@@ -1,0 +1,10 @@
+.netlify
+.vscode
+.gitattributes
+build
+docs
+jsconfig.json
+node_modules
+public
+src/assets/js
+src/assets/vendor
