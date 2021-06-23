@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 // Module imports
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {Link, Redirect, withRouter} from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 
 // Asset imports
 import ask from 'assets/images/ask.png';
@@ -12,13 +12,13 @@ import job from 'assets/images/job.png';
 import link from 'assets/images/link.png';
 
 // Helper imports
-import {formatTime} from 'helpers';
+import { formatTime } from 'helpers';
 
 // Redux action imports
-import {handleDeletePost} from 'redux/actions/posts';
+import { handleDeletePost } from 'redux/actions/posts';
 
 // Redux selector imports
-import {getPost} from 'redux/selectors';
+import { getPost } from 'redux/selectors';
 
 /**
  * Post component
@@ -34,7 +34,7 @@ import {getPost} from 'redux/selectors';
 const Post = (props) => {
   const {
     isHighlighted,
-    match: {params},
+    match: { params },
     post: {
       id,
       title,
@@ -45,8 +45,8 @@ const Post = (props) => {
       comments_count,
       type,
       url,
-      domain,
-    },
+      domain
+    }
   } = props;
   const isRoute = params.id;
 
@@ -70,7 +70,7 @@ const Post = (props) => {
         {type && (
           <div className="img-holder rounded">
             <img
-              src={isHighlighted ? highlight : {ask, job}[type] || link}
+              src={isHighlighted ? highlight : { ask, job }[type] || link}
               className="img-fluid card-img-top rounded"
               alt={title}
             />
@@ -84,7 +84,7 @@ const Post = (props) => {
               {type && (
                 <span
                   className={`badge bg-${
-                    {link: 'primary', job: 'success'}[type] ||
+                    { link: 'primary', job: 'success' }[type] ||
                     'primary--custom'
                   } me-2`}
                 >
@@ -186,7 +186,7 @@ Post.propTypes = {
   /**
    * Post handleDeletePost
    */
-  handleDeletePost: PropTypes.func,
+  handleDeletePost: PropTypes.func
 };
 
 Post.defaultProps = {
@@ -199,9 +199,9 @@ Post.defaultProps = {
     comments_count: 0,
     type: '',
     url: '',
-    domain: '',
+    domain: ''
   },
-  isHighlighted: false,
+  isHighlighted: false
 };
 
 /**
@@ -210,11 +210,11 @@ Post.defaultProps = {
  * @param {{id: id, match: any}} ownProps
  * @return {{post: post}}
  */
-const mapStateToProps = ({posts}, {id, match}) => ({
-  post: getPost(posts, id || match?.params?.id),
+const mapStateToProps = ({ posts }, { id, match }) => ({
+  post: getPost(posts, id || match?.params?.id)
 });
 
 // Component export
 export default withRouter(
-    connect(mapStateToProps, {handleDeletePost})(Post),
+  connect(mapStateToProps, { handleDeletePost })(Post)
 );

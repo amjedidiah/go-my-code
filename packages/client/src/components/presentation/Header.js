@@ -1,7 +1,7 @@
 // Module imports
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
-import {HashLink} from 'react-router-hash-link';
+import { Link, NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 // Asset imports
 import logo from 'assets/images/logo.png';

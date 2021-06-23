@@ -1,6 +1,6 @@
 // Module import
-import {createStore} from 'redux';
-import {persistStore, persistReducer} from 'redux-persist';
+import { createStore } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 // Combined reducers import
@@ -15,7 +15,7 @@ import middleware from './middleware';
 const persistConfig = {
   key: process.env.REACT_APP_PERSIST_CONFIG_KEY,
   timeout: null,
-  storage,
+  storage
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

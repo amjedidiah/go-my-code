@@ -2,32 +2,32 @@
 const mongoose = require('mongoose');
 
 // Mongoose Schema
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 // Mongoose User Schema
 const PostsSchema = new Schema(
-    {
-      id: Number,
-      title: String,
-      points: Number,
-      user: String,
-      time: Number,
-      time_ago: String,
-      comments_count: Number,
-      type: {
-        type: String,
-        enum: ['ask', 'job', 'link'],
-      },
-      url: String,
-      domain: String,
-      isDeleted: {
-        default: false,
-        type: Boolean,
-      },
+  {
+    id: Number,
+    title: String,
+    points: Number,
+    user: String,
+    time: Number,
+    time_ago: String,
+    comments_count: Number,
+    type: {
+      type: String,
+      enum: ['ask', 'job', 'link']
     },
-    {
-      timestamps: true,
-    },
+    url: String,
+    domain: String,
+    isDeleted: {
+      default: false,
+      type: Boolean
+    }
+  },
+  {
+    timestamps: true
+  }
 );
 
 PostsSchema.methods.generateJWT = () => {
@@ -36,11 +36,11 @@ PostsSchema.methods.generateJWT = () => {
   expirationDate.setDate(today.getDate() + 60);
 
   return jwt.sign(
-      {
-        _id: this._id,
-        exp: parseInt(expirationDate.getTime() / 1000, 10),
-      },
-      'secret',
+    {
+      _id: this._id,
+      exp: parseInt(expirationDate.getTime() / 1000, 10)
+    },
+    'secret'
   );
 };
 
@@ -55,7 +55,7 @@ PostsSchema.methods.toAuthJSON = () => ({
   comments_count: this.comments_count,
   type: this.type,
   url: this.url,
-  domain: this.domain,
+  domain: this.domain
 });
 
 // Export Schema Model

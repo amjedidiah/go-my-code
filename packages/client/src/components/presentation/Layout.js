@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Component imports
-import {Footer, Header} from 'components';
+import { Footer, Header } from 'components';
 
 /**
  * Layout component
@@ -14,7 +14,7 @@ import {Footer, Header} from 'components';
  * const children = <></>
  * return <Layout>{children}</Layout>
  */
-const Layout = ({children}) => (
+const Layout = ({ children }) => (
   <>
     <Header />
     <main className="pt-5" id="main">
@@ -28,11 +28,11 @@ Layout.propTypes = {
   /**
    * Layout children
    */
-  children: PropTypes.element,
+  children: PropTypes.element
 };
 
 Layout.defaultProps = {
-  children: <></>,
+  children: <></>
 };
 
 // Component export

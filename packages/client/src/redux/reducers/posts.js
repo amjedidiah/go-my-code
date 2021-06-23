@@ -2,7 +2,7 @@ import {
   ADD_POST,
   DELETE_POST,
   DELETE_POSTS,
-  RECEIVE_POSTS,
+  RECEIVE_POSTS
 } from 'redux/actions/types';
 
 /**
@@ -11,7 +11,7 @@ import {
  * @param {action} action - Redux action
  * @return {posts} - returned posts state
  */
-const posts = (state = {}, {id, post, posts, type}) => {
+const posts = (state = {}, { id, post, posts, type }) => {
   switch (type) {
     case DELETE_POST:
       delete state[id];
@@ -21,7 +21,7 @@ const posts = (state = {}, {id, post, posts, type}) => {
     case RECEIVE_POSTS:
       return posts;
     case ADD_POST:
-      return {...state, [post?.id]: post};
+      return { ...state, [post?.id]: post };
     default:
       return state;
   }

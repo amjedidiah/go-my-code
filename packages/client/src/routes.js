@@ -1,9 +1,9 @@
 // Module imports
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Component imports
-import {Home, Layout, NotFound, Post} from 'components';
+import { Home, Layout, NotFound, Post } from 'components';
 
 /**
  * Routes component
@@ -18,9 +18,9 @@ const Routes = () => {
    * @const {route[]}
    */
   const routes = [
-    {path: '/', Component: Home, exact: true},
-    {path: '/posts/:id', Component: Post},
-    {path: '*', Component: NotFound},
+    { path: '/', Component: Home, exact: true },
+    { path: '/posts/:id', Component: Post },
+    { path: '*', Component: NotFound }
   ];
 
   return (

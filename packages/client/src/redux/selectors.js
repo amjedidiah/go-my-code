@@ -10,7 +10,7 @@ export const getLatestPostID = (statePosts) => getPosts(statePosts)[0]?.id;
  * @param {state} state
  * @return {bool}
  */
-export const getLoadedStatus = ({posts}) => Object.keys(posts || {}) > 1;
+export const getLoadedStatus = ({ posts }) => Object.keys(posts || {}) > 1;
 
 /**
  * Selector to get a post from state
@@ -26,7 +26,7 @@ export const getPost = (statePosts, id) => statePosts[id];
  * @return {id[]}
  */
 export const getPostIDs = (statePosts) =>
-  getPosts(statePosts).map(({id}) => id);
+  getPosts(statePosts).map(({ id }) => id);
 
 /**
  * Selector to get posts array from posts state object

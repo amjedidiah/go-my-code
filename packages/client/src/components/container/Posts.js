@@ -1,13 +1,13 @@
 // Module imports
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 // Component imports
-import {Post} from 'components';
+import { Post } from 'components';
 
 // Redux selector imports
-import {getRemainingPostIDs} from 'redux/selectors';
+import { getRemainingPostIDs } from 'redux/selectors';
 
 /**
  * Posts component
@@ -17,7 +17,7 @@ import {getRemainingPostIDs} from 'redux/selectors';
  * @example
  * return <Posts />
  */
-const Posts = ({postIDs}) =>
+const Posts = ({ postIDs }) =>
   postIDs.length > 0 ? (
     <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5" id="posts">
       {postIDs.map((id) => (
@@ -32,11 +32,11 @@ Posts.propTypes = {
   /**
    * Posts postIDs
    */
-  postIDs: PropTypes.array,
+  postIDs: PropTypes.array
 };
 
 Posts.defaultProps = {
-  postIDs: [],
+  postIDs: []
 };
 
 /**
@@ -44,8 +44,8 @@ Posts.defaultProps = {
  * @param {state} state
  * @return {{postIDs: id[]}}
  */
-const mapStateToProps = ({posts}) => ({
-  postIDs: getRemainingPostIDs(posts),
+const mapStateToProps = ({ posts }) => ({
+  postIDs: getRemainingPostIDs(posts)
 });
 
 // Component export

@@ -1,6 +1,6 @@
 // Module import
-import {combineReducers} from 'redux';
-import {loadingBarReducer} from 'react-redux-loading';
+import { combineReducers } from 'redux';
+import { loadingBarReducer } from 'react-redux-loading';
 
 // Reducer imports
 import posts from 'redux/reducers/posts';
@@ -8,5 +8,5 @@ import posts from 'redux/reducers/posts';
 // Export combineReducers
 export default combineReducers({
   posts,
-  loadingBar: loadingBarReducer,
+  loadingBar: loadingBarReducer
 });

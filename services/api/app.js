@@ -16,7 +16,7 @@ require('dotenv').config();
 const routes = require('./src/routes');
 
 // DB_URL
-const {DB_URL, NODE_ENV, PORT} = process.env;
+const { DB_URL, NODE_ENV, PORT } = process.env;
 
 // Configure isProduction variable
 const isProduction = NODE_ENV === 'production';
@@ -28,14 +28,14 @@ const port = PORT || 8008;
 // Configure app
 app.use(cors());
 app.use(require('morgan')('dev'));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(formData.parse());
 
 if (!isProduction) app.use(errorHandler());
 
 // DB connection
-mongoose.connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('debug', true);
 
 // Routes

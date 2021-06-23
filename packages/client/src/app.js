@@ -1,18 +1,18 @@
 // Module imports
-import React, {Component, Suspense} from 'react';
-import {connect} from 'react-redux';
+import React, { Component, Suspense } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {LoadingBar} from 'react-redux-loading';
-import {ToastContainer} from 'react-toastify';
+import { LoadingBar } from 'react-redux-loading';
+import { ToastContainer } from 'react-toastify';
 
 // Action imports
-import {handleInitialData} from 'redux/actions/posts';
+import { handleInitialData } from 'redux/actions/posts';
 
 // Routes import
 import Routes from 'routes';
 
 // Selector imports
-import {getLoadedStatus} from 'redux/selectors';
+import { getLoadedStatus } from 'redux/selectors';
 
 /**
  * App component
@@ -29,12 +29,12 @@ class App extends Component {
     /**
      * App loading
      */
-    loading: PropTypes.bool,
+    loading: PropTypes.bool
   };
 
   static defaultProps = {
     handleInitialData: () => {},
-    loading: true,
+    loading: true
   };
 
   /**
@@ -70,7 +70,7 @@ class App extends Component {
  * @param {state} state
  * @return {{loading: boolean}}
  */
-const mapStateToProps = (state) => ({loading: getLoadedStatus(state)});
+const mapStateToProps = (state) => ({ loading: getLoadedStatus(state) });
 
 // Component export
-export default connect(mapStateToProps, {handleInitialData})(App);
+export default connect(mapStateToProps, { handleInitialData })(App);

@@ -1,13 +1,13 @@
 // Module imports
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 // Component imports
-import {Post, Posts} from 'components';
+import { Post, Posts } from 'components';
 
 // Redux selector imports
-import {getLatestPostID} from 'redux/selectors';
+import { getLatestPostID } from 'redux/selectors';
 
 /**
  * Home component
@@ -17,7 +17,7 @@ import {getLatestPostID} from 'redux/selectors';
  * @example
  * return <Home />
  */
-const Home = ({latestPostID}) => (
+const Home = ({ latestPostID }) => (
   <section className="container pt-5 mt-5">
     <article className="row mb-5 pb-lg-3">
       <h1 className="display-3 mb-4">The News</h1>
@@ -31,11 +31,11 @@ Home.propTypes = {
   /**
    * Home latestPostID
    */
-  latestPostID: PropTypes.number,
+  latestPostID: PropTypes.number
 };
 
 Home.defaultProps = {
-  latestPostID: 0,
+  latestPostID: 0
 };
 
 /**
@@ -43,8 +43,8 @@ Home.defaultProps = {
  * @param {state} state
  * @return {{latestPostID: id}}
  */
-const mapStateToProps = ({posts}) => ({
-  latestPostID: getLatestPostID(posts),
+const mapStateToProps = ({ posts }) => ({
+  latestPostID: getLatestPostID(posts)
 });
 
 // Component export

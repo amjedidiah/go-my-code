@@ -5,7 +5,7 @@ const Posts = require('../../../models/Posts');
 // Module export
 module.exports = (req, res) => {
   const post = req.body;
-  const {id, title, user, type} = post;
+  const { id, title, user, type } = post;
 
   const data = null;
   const error = true;
@@ -16,7 +16,7 @@ module.exports = (req, res) => {
       data,
       message: `id, title and type are required for post with title:
       ${title} by user: ${user}`,
-      error,
+      error
     });
   }
 
@@ -25,48 +25,48 @@ module.exports = (req, res) => {
     return res.status(408).send({
       data,
       message: 'Post type is invalid',
-      error,
+      error
     });
   }
 
   // Check if post already exists
-  Posts.find({isDeleted: false})
-      .then((posts) => {
-        const found = posts.find((p) => p.user === user && p.title === title);
+  Posts.find({ isDeleted: false })
+    .then((posts) => {
+      const found = posts.find((p) => p.user === user && p.title === title);
 
-        if (found) {
-          return res.status(409).send({
-            data,
-            message: 'A post like this already exists',
-            error,
-          });
-        }
-
-        const finalPost = new Posts(post);
-
-        // Save post && return response
-        return finalPost
-            .save()
-            .then(async () =>
-              res.status(201).send({
-                data: [...posts, finalPost],
-                message: 'Post added successfully',
-                error: false,
-              }),
-            )
-            .catch((err) =>
-              res.status(500).send({
-                data,
-                message: err || 'Internal server error',
-                error,
-              }),
-            );
-      })
-      .catch((err) =>
-        res.status(500).send({
+      if (found) {
+        return res.status(409).send({
           data,
-          message: err || 'Internal server error',
-          error,
-        }),
-      );
+          message: 'A post like this already exists',
+          error
+        });
+      }
+
+      const finalPost = new Posts(post);
+
+      // Save post && return response
+      return finalPost
+        .save()
+        .then(async () =>
+          res.status(201).send({
+            data: [...posts, finalPost],
+            message: 'Post added successfully',
+            error: false
+          })
+        )
+        .catch((err) =>
+          res.status(500).send({
+            data,
+            message: err || 'Internal server error',
+            error
+          })
+        );
+    })
+    .catch((err) =>
+      res.status(500).send({
+        data,
+        message: err || 'Internal server error',
+        error
+      })
+    );
 };

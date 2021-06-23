@@ -1,7 +1,7 @@
 // Module import
-import {hideLoading, showLoading} from 'react-redux-loading';
+import { hideLoading, showLoading } from 'react-redux-loading';
 import objectifyArray from 'objectify-array';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 // API import
 import api from 'redux/api';
@@ -10,7 +10,7 @@ import api from 'redux/api';
 import history from 'redux/history';
 
 // Type imports
-import {ADD_POST, DELETE_POST, DELETE_POSTS, RECEIVE_POSTS} from './types';
+import { ADD_POST, DELETE_POST, DELETE_POSTS, RECEIVE_POSTS } from './types';
 
 /**
  * Handles add post request
@@ -22,14 +22,14 @@ export const handleAddPost = (post) => (dispatch) => {
   dispatch(addPost(post));
 
   return api
-      .post(`/posts`, post)
-      .then(({data}) => toast.success(data?.message))
-      .catch(({response}) => {
-        toast.error('Error adding post');
-        console.log(response?.data?.message || response?.statusText);
-        dispatch(deletePost(post.id));
-      })
-      .finally(() => dispatch(hideLoading()));
+    .post(`/posts`, post)
+    .then(({ data }) => toast.success(data?.message))
+    .catch(({ response }) => {
+      toast.error('Error adding post');
+      console.log(response?.data?.message || response?.statusText);
+      dispatch(deletePost(post.id));
+    })
+    .finally(() => dispatch(hideLoading()));
 };
 
 /**
@@ -42,17 +42,17 @@ export const handleDeletePost = (post) => (dispatch) => {
   dispatch(deletePost(post.id));
 
   return api
-      .delete(`/posts/${post.id}`)
-      .then(({data}) => toast.success(data?.message))
-      .catch(({response}) => {
-        toast.error('Error deleting post');
-        console.log(response?.data?.message || response?.statusText);
-        dispatch(addPost(post));
-      })
-      .finally(() => {
-        dispatch(hideLoading());
-        history.push('/');
-      });
+    .delete(`/posts/${post.id}`)
+    .then(({ data }) => toast.success(data?.message))
+    .catch(({ response }) => {
+      toast.error('Error deleting post');
+      console.log(response?.data?.message || response?.statusText);
+      dispatch(addPost(post));
+    })
+    .finally(() => {
+      dispatch(hideLoading());
+      history.push('/');
+    });
 };
 
 /**
@@ -65,14 +65,14 @@ export const handleDeletePosts = () => (dispatch, getState) => {
   dispatch(deletePosts());
 
   return api
-      .delete('/posts')
-      .then(({data}) => toast.success(data?.message))
-      .catch(({response}) => {
-        toast.error('Error deleting all post');
-        console.log(response?.data?.message || response?.statusText);
-        dispatch(receivePosts(posts));
-      })
-      .finally(() => dispatch(hideLoading()));
+    .delete('/posts')
+    .then(({ data }) => toast.success(data?.message))
+    .catch(({ response }) => {
+      toast.error('Error deleting all post');
+      console.log(response?.data?.message || response?.statusText);
+      dispatch(receivePosts(posts));
+    })
+    .finally(() => dispatch(hideLoading()));
 };
 
 /**
@@ -84,18 +84,18 @@ export const handleInitialData = () => (dispatch, getState) => {
   dispatch(showLoading());
 
   return api
-      .get(`/posts`)
-      .then(({data}) => {
-        toast.success(data?.message);
-        dispatch(receivePosts(objectifyArray(data?.data)));
-      })
-      .catch(({response}) => {
-        console.log(response?.data?.message || response?.statusText);
-        return statePost ?
-        toast.info('Posts fetched from memory') :
-        toast.error('Error fetching posts');
-      })
-      .finally(() => dispatch(hideLoading()));
+    .get(`/posts`)
+    .then(({ data }) => {
+      toast.success(data?.message);
+      dispatch(receivePosts(objectifyArray(data?.data)));
+    })
+    .catch(({ response }) => {
+      console.log(response?.data?.message || response?.statusText);
+      return statePost
+        ? toast.info('Posts fetched from memory')
+        : toast.error('Error fetching posts');
+    })
+    .finally(() => dispatch(hideLoading()));
 };
 
 /**
@@ -103,24 +103,24 @@ export const handleInitialData = () => (dispatch, getState) => {
  * @param {post} post
  * @return {action}
  */
-const addPost = (post) => ({type: ADD_POST, post});
+const addPost = (post) => ({ type: ADD_POST, post });
 
 /**
  * Deletes a post from state
  * @param {id} id
  * @return {action}
  */
-const deletePost = (id) => ({type: DELETE_POST, id});
+const deletePost = (id) => ({ type: DELETE_POST, id });
 
 /**
  * Deletes all posts from state
  * @return {action}
  */
-const deletePosts = () => ({type: DELETE_POSTS});
+const deletePosts = () => ({ type: DELETE_POSTS });
 
 /**
  * Adds posts to state
  * @param {posts} posts
  * @return {action}
  */
-const receivePosts = (posts) => ({type: RECEIVE_POSTS, posts});
+const receivePosts = (posts) => ({ type: RECEIVE_POSTS, posts });

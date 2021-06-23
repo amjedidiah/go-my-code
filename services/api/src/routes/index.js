@@ -10,8 +10,8 @@ router.all('*', (req, res) =>
   res.status(400).send({
     data: null,
     message: 'Incorrect Route',
-    error: true,
-  }),
+    error: true
+  })
 );
 
 // Export router module

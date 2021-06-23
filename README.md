@@ -49,6 +49,7 @@ git clone https://github.com/amjedidiah/go-my-code.git go-my-code
 cd go-my-code
 yarn get-started
 yarn start
+# Open http://localhost:5000 in your browser  to preview app
 ```
 
 ### Usage
