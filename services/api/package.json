@@ -29,7 +29,7 @@
     "api:serve": "api-console serve build",
     "api:launch": "yarn run api:build && yarn run api:serve",
     "check": "yarn lint && yarn test",
-    "dev": "nodemon --delay 500ms app.js",
+    "dev": "nodemon --delay 500ms app.js || false",
     "lint": "eslint \"**/*.js\" --fix || false",
     "start": "node app.js",
     "test": "jest --passWithNoTests",
@@ -44,8 +44,7 @@
     "express": "^4.17.1",
     "express-form-data": "^2.0.17",
     "mongoose": "^5.12.14",
-    "morgan": "^1.10.0",
-    "validator": "^13.6.0"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "eslint": "^7.29.0",

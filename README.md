@@ -11,18 +11,6 @@ TODO: Add Codacy Badge
 
 > **A job assessment by GoMyCode**
 
-## Table of Content
-
-- [Quick Start](#quick-start)
-- [Authors](#authors)
-- [Contributing](#contributing)
-- [License](#license)
-- [About Me](#about-me)
-
-## Quick Start
-
-### About
-
 As part of our selection process, we send take-home project to selected candidates, and you are one of them!
 
 The followings are the detail of the take-home project:
@@ -38,23 +26,50 @@ The followings are the detail of the take-home project:
 > - [x] Create a detail page to display the details of the post.
 > - [x] Create a button in each post to delete it.
 >
-> **Resources**: [GitHub Repo](https://github.com/gomycode-engineering/technical-tests-fake-data/blob/master/posts.json) 
-> **Technologies**: Reactjs, Expressjs, MongoDB, Mongoose
+> **Resources**: [GitHub Repo](https://github.com/gomycode-engineering/technical-tests-fake-data/blob/master/posts.json) > **Technologies**: Reactjs, Expressjs, MongoDB, Mongoose
 > **Time**: 24 hours
 > **Submission**: [Submit here](https://app3.greenhouse.io/tests/f1f4561cf914afa88f2b042874b3de94?utm_medium=email&utm_source=TakeHomeTest)
 
+## Table of Content
+
+- [Quick Start](#quick-start)
+- [Authors](#authors)
+- [Contributing](#contributing)
+- [License](#license)
+- [About Me](#about-me)
+
+## Quick Start
+
 ### Installation
+
+You will need a **_strong internet connection_** to complete the steps below
 
 ```bash
 git clone https://github.com/amjedidiah/go-my-code.git go-my-code
 cd go-my-code
 yarn get-started
+yarn start
 ```
 
 ### Usage
 
-<!-- TODO: Update demo video link -->
-<!-- Watch this short [demo video]() of how to use the app. -->
+[Link to front-end react app](https://go-my-codde.netlify.app)
+
+[API baseURL](https://go-my-code-api.herokuapp.com/api)
+
+#### API Endpoints
+
+- `/api/posts`
+  - `delete`: deletes all posts in database
+  - `get`: gets all posts from database
+  - `post`: add a single post to the database
+
+- `/api/posts/populate`
+  - `post`: populates the database with dummy data
+
+- `/api/posts/:id`
+  - `delete`: deletes a single post in the database using the post's id
+  - `get`: gets a single post from database using the post's id
 
 ### Code reference
 

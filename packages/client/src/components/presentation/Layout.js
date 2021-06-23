@@ -17,7 +17,9 @@ import {Footer, Header} from 'components';
 const Layout = ({children}) => (
   <>
     <Header />
-    <main className="pt-5" id="main">{children}</main>
+    <main className="pt-5" id="main">
+      {children}
+    </main>
     <Footer />
   </>
 );

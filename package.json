@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "get-started": "yarn install && lerna exec --parallel -- yarn install",
     "api": "lerna run --parallel --scope go-my-code-api dev",
     "api:doc": "lerna run --parallel --scope go-my-code-api api:launch",
     "client": "lerna run --parallel --scope go-my-code-client dev",
@@ -12,7 +13,7 @@
     "dev": "lerna run dev --parallel",
     "start": "lerna run start --parallel",
     "deploy:api": "git subtree push --prefix services/api heroku master || true",
-    "deploy:client": "lerna run --scope go-my-code-client deploy:netlify-live",
+    "deploy:client": "lerna run --parallel --scope go-my-code-client deploy:netlify-live",
     "deploy": "yarn deploy:api && yarn deploy:client"
   },
   "pre-commit": "predev",
