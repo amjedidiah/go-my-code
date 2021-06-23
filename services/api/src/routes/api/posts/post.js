@@ -62,12 +62,9 @@ module.exports = (req, res) => {
               }),
             );
       })
-      .catch((err) => {
-        console.log(err);
-        return res.status(500).send({
-          data,
-          message: err || 'Internal server error',
-          error,
-        });
-      });
+      .catch((err) => res.status(500).send({
+        data,
+        message: err || 'Internal server error',
+        error,
+      }));
 };

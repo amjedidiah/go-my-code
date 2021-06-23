@@ -8,3 +8,7 @@
 .bg-primary--custom {
   background: var(--primary);
 }
+
+#main {
+  min-height: calc(100vh - 45px);
+}

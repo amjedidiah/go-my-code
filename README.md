@@ -38,9 +38,9 @@ The followings are the detail of the take-home project:
 > - [x] Create a detail page to display the details of the post.
 > - [x] Create a button in each post to delete it.
 >
-> **Resources**: [GitHub Repo](https://github.com/gomycode-engineering/technical-tests-fake-data/blob/master/posts.json) > **Technologies**: Reactjs, Expressjs, MongoDB, Mongoose
+> **Resources**: [GitHub Repo](https://github.com/gomycode-engineering/technical-tests-fake-data/blob/master/posts.json) 
+> **Technologies**: Reactjs, Expressjs, MongoDB, Mongoose
 > **Time**: 24 hours
-> **Deadline**: Tuesday 22 June 2021
 > **Submission**: [Submit here](https://app3.greenhouse.io/tests/f1f4561cf914afa88f2b042874b3de94?utm_medium=email&utm_source=TakeHomeTest)
 
 ### Installation
@@ -48,8 +48,7 @@ The followings are the detail of the take-home project:
 ```bash
 git clone https://github.com/amjedidiah/go-my-code.git go-my-code
 cd go-my-code
-bash packages.sh
-yarn dev
+yarn get-started
 ```
 
 ### Usage

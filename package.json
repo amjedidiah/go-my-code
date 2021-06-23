@@ -12,7 +12,7 @@
     "dev": "lerna run dev --parallel",
     "start": "lerna run start --parallel",
     "deploy:api": "git subtree push --prefix services/api heroku master || true",
-    "deploy:client": "lerna run --parallel --scope go-my-code-client deploy",
+    "deploy:client": "lerna run --scope go-my-code-client deploy:netlify-live",
     "deploy": "yarn deploy:api && yarn deploy:client"
   },
   "pre-commit": "predev",

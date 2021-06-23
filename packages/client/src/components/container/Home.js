@@ -21,7 +21,7 @@ const Home = ({latestPostID}) => (
   <section className="container pt-5 mt-5">
     <article className="row mb-5 pb-lg-3">
       <h1 className="display-3 mb-4">The News</h1>
-      <Post id={latestPostID} isHighlighted />
+      {latestPostID && <Post id={latestPostID} isHighlighted />}
     </article>
     <Posts />
   </section>

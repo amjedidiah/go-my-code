@@ -11,10 +11,10 @@ module.exports = async (req, res) =>
           message: 'Posts fetched successfully',
           error: false,
         }) :
-        res.status(404).send({
-          data: null,
+        res.status(200).send({
+          data: [],
           message: 'No post found',
-          error: true,
+          error: false,
         }),
       )
       .catch((err) =>
